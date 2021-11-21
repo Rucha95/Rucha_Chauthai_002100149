@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author adwai
+ * @author ruchachauthai
  */
 public class OrderDetails extends javax.swing.JPanel {
 
