@@ -3,7 +3,11 @@
  * and open the template in the editor.
  */
 package Business.Employee;
-//Employee
+
+/**
+ *
+ * @author ruchachauthai
+ */
 public class Employee {
     
     private String name;
