@@ -47,8 +47,8 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("My Work Area -Adminstrative Role");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        jLabel1.setText("Admin Login");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         btnManageRestroInfo.setBackground(new java.awt.Color(0, 0, 0));
         btnManageRestroInfo.setForeground(new java.awt.Color(255, 255, 255));
@@ -58,7 +58,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageRestroInfoActionPerformed(evt);
             }
         });
-        add(btnManageRestroInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 260, -1));
+        add(btnManageRestroInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 260, 50));
 
         btnManageMenu.setBackground(new java.awt.Color(0, 0, 0));
         btnManageMenu.setForeground(new java.awt.Color(255, 255, 255));
@@ -68,7 +68,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageMenuActionPerformed(evt);
             }
         });
-        add(btnManageMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 260, -1));
+        add(btnManageMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 260, 50));
 
         btnManageOrder.setBackground(new java.awt.Color(0, 0, 0));
         btnManageOrder.setForeground(new java.awt.Color(255, 255, 255));
@@ -78,15 +78,15 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageOrderActionPerformed(evt);
             }
         });
-        add(btnManageOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 260, -1));
+        add(btnManageOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 260, 50));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("Restaurant :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 120, 30));
 
         lblRestName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblRestName.setText("<value>");
-        add(lblRestName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, -1));
+        add(lblRestName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 130, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageRestroInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageRestroInfoActionPerformed

@@ -98,6 +98,8 @@ public class MenuPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -221,15 +223,28 @@ public class MenuPanel extends javax.swing.JPanel {
         jLabel1.setText("Enter Delivery Location:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 180, -1));
 
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel2.setText("Select Items to Buy");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        jLabel3.setText("Menu Selection");
+        jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel3.setText("Restaurant Menu");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel4.setText("Your Total : ");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel5.setText("$");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 510, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
-        
+sum=0;
+for(int i=0;i<tblCart.getRowCount();i++){
+sum=sum+Integer.parseInt((String)tblCart.getValueAt(i,2));
+}
         String address=txtAddress.getText();
         restaurant.addOrder(restaurant.getName(), userAccount.getUsername(), null, items, String.valueOf(sum) , address);
         for(Customer cust:ecosystem.getCustomerDirectory().getCustomerDirectory()){
@@ -269,18 +284,46 @@ public class MenuPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAddToCartActionPerformed
 
     private void btnRemoveFromCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveFromCartActionPerformed
-        // TODO add your handling code here:
-        int selectedRow = tblCart.getSelectedRow();
+         int selectedRow = tblCart.getSelectedRow();
         if(selectedRow<0){
-            JOptionPane.showMessageDialog(null,"Please select a row from the table to remove from cart","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
             Dishes item=(Dishes)tblCart.getValueAt(selectedRow, 0);
             items.remove(item);
             DefaultTableModel model = (DefaultTableModel) tblCart.getModel();
         model.setRowCount(0);
+            Object[] row = new Object[3];
+                for(Dishes dish:items){
+                     row[0] = dish;
+                     row[1] = dish.getDescription();
+                     row[2] = dish.getPrice();
+                     
+                     model.addRow(row);
+                }
+                sum = 0;
+                for(int i=0;i<tblCart.getRowCount();i++){
+        //System.out.println(cartTable.getValueAt(i, 2)+" "+cartTable.getRowCount());
+        
+        sum=sum+Integer.parseInt((String) tblCart.getValueAt(i, 2));
+       // jLabel1.setText(Integer.toString(sum));
+        }
+          jLabel5.setText(Integer.toString(sum));
+        }
+        
+        
+// TODO add your handling code here:
+//        int selectedRow = tblCart.getSelectedRow();
+//        if(selectedRow<0){
+//            JOptionPane.showMessageDialog(null,"Please select a row from the table to remove from cart","Warning",JOptionPane.WARNING_MESSAGE);
+//        }
+//        else{
+//            Dishes item=(Dishes)tblCart.getValueAt(selectedRow, 0);
+//            items.remove(item);
+//            DefaultTableModel model = (DefaultTableModel) tblCart.getModel();
+//        model.setRowCount(0);
            // commented no use
-                }  
+//                }  
     }//GEN-LAST:event_btnRemoveFromCartActionPerformed
 
     private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
@@ -296,6 +339,8 @@ public class MenuPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

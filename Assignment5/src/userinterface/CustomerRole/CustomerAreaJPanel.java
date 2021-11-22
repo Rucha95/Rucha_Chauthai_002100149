@@ -132,7 +132,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 
         btnOrder.setBackground(new java.awt.Color(0, 0, 0));
         btnOrder.setForeground(new java.awt.Color(255, 255, 255));
-        btnOrder.setText("Place Order");
+        btnOrder.setText("View Restaurant Menu");
         btnOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrderActionPerformed(evt);
@@ -165,11 +165,11 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "OrderID", "Restaurant Name", "Amount", "Status"
+                "OrderID", "Restaurant Name", "Amount"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -181,7 +181,6 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             tblPreviousOrders.getColumnModel().getColumn(0).setResizable(false);
             tblPreviousOrders.getColumnModel().getColumn(1).setResizable(false);
             tblPreviousOrders.getColumnModel().getColumn(2).setResizable(false);
-            tblPreviousOrders.getColumnModel().getColumn(3).setResizable(false);
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -234,7 +233,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
         int selectedRow = tblRestaurant.getSelectedRow();
         if(selectedRow<0){
-            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please select your favourite restaurant to proceed.","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
            Restaurant restaurant = (Restaurant)tblRestaurant.getValueAt(selectedRow, 0);
